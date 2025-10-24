@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Git Visualizer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <h1>Vetochka</h1>
+    <button id="clearRepoBtn">Очистить</button>
+  </div>
+
+  <div class="container">
+    <main class="graph-panel">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+        <div class="small">HEAD:</div>
+        <div id="headInfo" style="font-weight:700">-</div>
+        <div style="flex:1"></div>
+      </div>
+
+      <div class="viewport" id="viewport">
+        <svg id="svg"></svg>
+        <div id="tooltip" class="tooltip"></div>
+      </div>
+
+      <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+        <div class="small">Навигация: колесо — zoom, перетаскивание — pan.</div>
+        <div style="flex:1"></div>
+        <div class="small" id="zoomLabel">100%</div>
+      </div>
+    </main>
+  </div>
+
+  <div id="terminal">
+    <div id="terminalOutput"></div>
+    <div class="terminal-line">
+      <span class="prompt">$</span>
+      <input id="terminalInput" placeholder="Введите команду (например: git init)" autofocus/>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
